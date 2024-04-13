@@ -6,7 +6,6 @@ export async function registerAuthor(req: Request, res: Response) {
     const prisma = new PrismaClient();
     const { email } = req.body;
 
-    // Assuming there's an email field in the author table
     const existingAuthor = await prisma.author.findUnique({
       where: {
         email,
